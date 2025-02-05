@@ -1,5 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 import React from "react";
+import * as motion from "motion/react-client";
 
 import BigSale from "./BigSale";
 
@@ -10,7 +11,7 @@ const LadiBot = () => {
         backgroundImage:
           "url('https://w.ladicdn.com/s768x477/6513a52323c204001244ad79/3e271b097c955d6dcdef83b92a1e124f-20241008045232-2c0-i.jpg')",
       }}
-      className="bg-cover h-[477px] w-full flex flex-col items-center"
+      className="bg-cover h-[477px] w-full flex flex-col items-center scroll-smooth"
     >
       <div className="text-center text-white font-bold text-[14px] ">
         <h3 className="pt-3"> Эрэгтэйчүүдэд зориулсан өнгөлөгч</h3>
@@ -42,11 +43,24 @@ const LadiBot = () => {
       <div className="mt-10">
         <BigSale />
       </div>
-      <div className="w-[291px] h-[60px] bg-white shadow-[rgb(0, 0, 0) 0px 15px 20px -15px] flex justify-center items-center mt-5">
-        <p className="text-[#731414] text-[18px] font-bold">
+      <motion.div
+        className="w-[291px] h-[60px] bg-white shadow-[rgb(0, 0, 0) 0px 15px 20px -15px] flex justify-center items-center mt-5"
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{
+          duration: 2,
+          ease: "easeInOut",
+          times: [0, 0.2, 0.5, 0.8, 1],
+          repeat: Infinity,
+          repeatDelay: 1,
+        }}
+      >
+        <a
+          href="#hello"
+          className="text-[#731414] text-[18px] font-bold scroll-smooth"
+        >
           Одоо худалдаж авах
-        </p>
-      </div>
+        </a>
+      </motion.div>
     </div>
   );
 };

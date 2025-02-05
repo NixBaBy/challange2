@@ -1,9 +1,10 @@
 import React from "react";
 import CountdownTimer from "./LadiClock";
+import * as motion from "motion/react-client";
 
 const BigSale = () => {
   return (
-    <div className="flex justify-center  text-white">
+    <div className="flex justify-center text-white">
       <div className="w-[400px] h-[223px] border-[1px] border-solid border-[#f1f3f4] bg-[#3883ac] relative">
         <div className="">
           <img
@@ -26,15 +27,26 @@ const BigSale = () => {
           ></div>
           <div className="flex flex-col gap-5 py-[10px]">
             <div>
-              <p className="line-through text-[14.06px] ">
+              <p className="line-through text-[14.06px]">
                 Эхлэх үнэ: 99,000 MNT
               </p>
               <p className="text-[19px] font-bold">Давуу үнэ: 39,000 MNT</p>
             </div>
-            <p className="text-[11px] font-bold text-[#ffde59] text-center ml-[-18px]  w-[243px]">
-              Хязгаарлагдмал санал, супер чанартай <br /> бэлгийг авахын тулд
-              яараарай!!!
-            </p>
+            <motion.div
+              animate={{ opacity: [0, 0.7, 1] }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "reverse",
+                repeatDelay: 0.5,
+                ease: "easeInOut",
+              }}
+            >
+              <p className="text-[11px] font-bold text-[#ffde59] text-center ml-[-18px] w-[243px]">
+                Хязгаарлагдмал санал, супер чанартай <br /> бэлгийг авахын тулд
+                яараарай!!!
+              </p>
+            </motion.div>
           </div>
         </div>
       </div>

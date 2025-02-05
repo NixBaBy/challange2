@@ -1,10 +1,17 @@
 "use client";
 import React, { useState } from "react";
-
+import * as motion from "motion/react-client";
 import BigSale from "../Header/BigSale";
 import OrderInput from "./OrderInput";
 import CheckboxGroup from "./Checkbox";
 import RamainingProducts from "./RamainingProducts";
+import emailjs from "@emailjs/browser";
+
+type FormValueType = {
+  Name: string;
+  Phone: string;
+  Addres: string;
+};
 
 const OrderNow = () => {
   const [formValue, setFormValue] = useState({
@@ -22,6 +29,26 @@ const OrderNow = () => {
     const { name, value } = e.target;
     setFormError((prev) => ({ ...prev, [name]: "" }));
     setFormValue((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const sendEmail = (formValue: FormValueType) => {
+    emailjs
+      .send(
+        "service_3h92yrr",
+        "template_a5l5sdf",
+        { ...formValue, email: "tuuguu123123@gmail.com" },
+        {
+          publicKey: "M4Lbb7HyMtlTMYrKi",
+        }
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
   };
 
   const clickHandler = () => {
@@ -52,19 +79,18 @@ const OrderNow = () => {
     }
 
     if (!errorHave) {
-      alert(
-        "Та захиалгаа амжилттай хийлээ. Бид удахгүй тан руу залгаж захиалгаа баталгаажуулах болно"
-      );
+      sendEmail(formValue);
     }
   };
 
   return (
     <div
+      id="hello"
       style={{
         backgroundImage:
           "url('https://w.ladicdn.com/s768x871/6513a52323c204001244ad79/3e271b097c955d6dcdef83b92a1e124f-20241008045232-2c0-i.jpg')",
       }}
-      className="w-full h-[907px] flex flex-col items-center mb-5"
+      className="w-full h-[907px] flex flex-col items-center mb-5 scroll-smooth"
     >
       <div className="pt-6">
         <BigSale />
@@ -100,29 +126,21 @@ const OrderNow = () => {
       <div>
         <CheckboxGroup />
       </div>
-      <div className="text-[30px] font-bold text-white bg-red-600 rounded-lg p-[5px] mt-5">
-        <button onClick={clickHandler}>
-          <span className="inline-block animate-bounce-text">
-            Одоо худалдаж авах
-          </span>
-        </button>
 
-        <style jsx>{`
-          @keyframes bounceText {
-            0%,
-            100% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.1);
-            }
-          }
-          .animate-bounce-text {
-            animation: bounceText 1.5s infinite;
-            display: inline-block;
-          }
-        `}</style>
-      </div>
+      <motion.button
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{
+          duration: 2,
+          ease: "easeInOut",
+          times: [0, 0.2, 0.5, 0.8, 1],
+          repeat: Infinity,
+          repeatDelay: 1,
+        }}
+        onClick={clickHandler}
+        className="text-[30px] font-bold text-white bg-red-600 rounded-lg p-[5px] mt-5"
+      >
+        Одоо худалдаж авах
+      </motion.button>
 
       <div className="w-[400px] bg-orange-500 border-[2px] border-solid border-white rounded-[14px] flex gap-2 items-center justify-center mt-5">
         <img src="/baraa.svg" alt="" className="w-[25px] h-[25px]" />

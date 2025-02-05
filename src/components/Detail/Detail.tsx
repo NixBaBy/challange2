@@ -4,7 +4,7 @@ import DetailCard from "./DetailCard";
 const Detail = () => {
   return (
     <div className="bg-[#2F2F2F] w-full mt-5 ">
-      <div className="pt-10 flex flex-col gap-10">
+      <div className="pt-10 flex flex-col gap-10 pb-10">
         <DetailCard
           img={
             "https://w.ladicdn.com/s650x550/6513a52323c204001244ad79/unnamed-removebg-preview-20241018064725-j_dv8.png"

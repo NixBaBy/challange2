@@ -6,7 +6,7 @@ const Contact = () => {
     <div
       style={{
         backgroundImage:
-          "url('https://w.ladicdn.com/s750x950/64b4ca9d946c60001210f97b/city-landscape-at-night-20240405042539-0wpv3.jpg')",
+          "linear-gradient(0deg, rgba(204,116,42,0.6293110994397759) 100%, rgba(213,143,16,0) 100%),url('https://w.ladicdn.com/s750x950/64b4ca9d946c60001210f97b/city-landscape-at-night-20240405042539-0wpv3.jpg')",
       }}
       className="w-[421px] h-[352px] bg-cover bg-center "
     >
@@ -27,7 +27,7 @@ const Contact = () => {
         </div>
         <div className="flex flex-col gap-5">
           <h3>CUSTOMER SERVICE</h3>
-          <div className="flex justify-around">
+          <div className="flex justify-around ">
             <div>
               <div className="flex">
                 <img src="/Contact1.svg" alt="" className="w-[22px] h-[22px]" />
