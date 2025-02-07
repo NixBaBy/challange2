@@ -113,6 +113,7 @@ const OrderNow = () => {
         Checkbox: selectedOption, // Checkbox-ын утгыг formValue-д нэмэх
       };
       sendEmail(updatedFormValue);  // Имэйлд илгээх
+      alert("Таны захиалга амжилттай хийгдлээ")
     }
  
   };
