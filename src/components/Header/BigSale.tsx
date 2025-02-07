@@ -28,7 +28,7 @@ const BigSale = () => {
           <div className="flex flex-col gap-5 py-[10px]">
             <div>
               <p className="line-through text-[14.06px]">
-                Эхлэх үнэ: 99,000 MNT
+                Эхлэх үнэ: 50,000 MNT
               </p>
               <p className="text-[19px] font-bold">Давуу үнэ: 20,000 MNT</p>
             </div>

@@ -39,6 +39,20 @@ const CheckboxGroup = ({ setSelectedOption, error, name, value }: CheckboxGroupP
           className="mr-2 h-4 w-4"
         />
         <label htmlFor="option2" className="text-[15px] font-bold">
+        Нүдний шилний салфетик 3ш цэнхэр 19&apos;000
+        </label>
+      </div>
+      <div className="flex items-center">
+        <input
+          type="radio"
+          id="option3"
+          name={name}
+          value="option3"
+          checked={value === "option3"}
+          onChange={handleRadioChange}
+          className="mr-2 h-4 w-4"
+        />
+        <label htmlFor="option3" className="text-[15px] font-bold">
         Нүдний шилний салфетик 4ш цэнхэр 20&apos;000
         </label>
       </div>

@@ -114,7 +114,7 @@ const OrderNow = () => {
       };
       sendEmail(updatedFormValue);  // Имэйлд илгээх
     }
-    console.log("selected",selectedOption)
+ 
   };
   
   

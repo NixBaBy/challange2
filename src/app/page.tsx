@@ -1,4 +1,4 @@
-import Contact from "@/components/Contact";
+
 import Detail from "@/components/Detail/Detail";
 import Ladi from "@/components/Header/Ladi";
 import LadiUser from "@/components/LadiUser/LadiUser";
@@ -14,7 +14,7 @@ export default function Home() {
       <OrderNow />
       <UserCommends />
       <Detail />
-      <Contact />
+   
       <StickyOff />
     </div>
   );
