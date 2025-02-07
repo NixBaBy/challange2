@@ -37,35 +37,33 @@ const OrderNow = () => {
   };
 
   const sendEmail = (formValue: FormValueType) => {
-    console.log("Sending email with data:", formValue); // Имэйл илгээхэд явж буй утгууд
     emailjs
       .send(
         "service_3h92yrr",
         "template_a5l5sdf",
         { ...formValue, email: "tuuguu123123@gmail.com" },
-        {
-          publicKey: "M4Lbb7HyMtlTMYrKi",
-        }
+        { publicKey: "M4Lbb7HyMtlTMYrKi" }
       )
       .then(
         (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+          alert("Амжилттай илгээгдлээ!");
         },
         (err) => {
-          console.log("FAILED...", err);
+          alert("Алдаа гарлаа. Дахин оролдоно уу.");
         }
       );
   };
   
-  // useEffect ашиглан checkbox сонгогдсоны үед алдааг арилгах
+  
+
   useEffect(() => {
     if (selectedOption) {
       setFormError((prev) => ({
         ...prev,
-        Checkbox: "", // Сонгогдсон бол алдааг цэвэрлэнэ
+        Checkbox: "", 
       }));
     }
-  }, [selectedOption]); // selectedOption өөрчлөгдсөн үед ажиллана
+  }, [selectedOption]); 
 
   const clickHandler = () => {
     let errorHave = false;
