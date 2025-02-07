@@ -1,62 +1,51 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 
-const CheckboxGroup = () => {
-  const [selectedOptions, setSelectedOptions] = useState({
-    option1: false,
-    option2: false,
-  });
+type CheckboxGroupProps = {
+  setSelectedOption: React.Dispatch<React.SetStateAction<string>>;
+  error: string;
+  name: string;
+  value: string;
+};
 
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = event.target;
-    setSelectedOptions((prevState) => ({
-      ...prevState,
-      [name]: checked,
-    }));
+const CheckboxGroup = ({ setSelectedOption, error, name, value }: CheckboxGroupProps) => {
+  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedOption(event.target.value);
   };
 
   return (
-    <div className="p-2 space-y-2 bg-white w-[377px] h-[177px] rounded-lg mt-5 flex flex-col gap-4 pt-5">
+    <div className="p-2 space-y-2 bg-white w-[377px] h-[177px] rounded-lg mt-5 flex flex-col justify-center gap-5">
       <div className="flex items-center">
         <input
-          type="checkbox"
+          type="radio"
           id="option1"
-          name="option1"
-          checked={selectedOptions.option1}
-          onChange={handleCheckboxChange}
+          name={name}
+          value="option1"
+          checked={value === "option1"}
+          onChange={handleRadioChange}
           className="mr-2 h-4 w-4"
         />
-        <label htmlFor="option1" className="text-[14px] font-bold">
-          Нүдний шилний салфетик 2ш цэнхэр 18'000
+        <label htmlFor="option1" className="text-[15px] font-bold">
+        Нүдний шилний салфетик 2ш цэнхэр 18&apos;000
         </label>
-        <div
-          style={{
-            backgroundImage:
-              "url('https://w.ladicdn.com/614d4f7443928c0014d91fd8/hot-icon-1-20200305071126-20220309075525-20230727034658-ozieb.gif')",
-          }}
-          className="w-[43px] h-[43px] bg-cover bg-center"
-        ></div>
       </div>
       <div className="flex items-center">
         <input
-          type="checkbox"
+          type="radio"
           id="option2"
-          name="option2"
-          checked={selectedOptions.option2}
-          onChange={handleCheckboxChange}
+          name={name}
+          value="option2"
+          checked={value === "option2"}
+          onChange={handleRadioChange}
           className="mr-2 h-4 w-4"
         />
-        <label htmlFor="option2" className="text-[14px] font-bold">
-          Нүдний шилний салфетик 4ш цэнхэр 20'000
+        <label htmlFor="option2" className="text-[15px] font-bold">
+        Нүдний шилний салфетик 4ш цэнхэр 20&apos;000
         </label>
-        <div
-          style={{
-            backgroundImage:
-              "url('https://w.ladicdn.com/614d4f7443928c0014d91fd8/hot-icon-1-20200305071126-20220309075525-20230727034658-ozieb.gif')",
-          }}
-          className="w-[43px] h-[43px] bg-cover bg-center"
-        ></div>
       </div>
+      {/* Checkbox validation error */}
+      {error && (
+        <small className="text-[red]">{error}</small>
+      )}
     </div>
   );
 };

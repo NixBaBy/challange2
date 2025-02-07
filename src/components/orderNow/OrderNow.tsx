@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as motion from "motion/react-client";
 import BigSale from "../Header/BigSale";
 import OrderInput from "./OrderInput";
@@ -11,18 +11,23 @@ type FormValueType = {
   Name: string;
   Phone: string;
   Addres: string;
+  Checkbox: string
 };
 
 const OrderNow = () => {
+  const [selectedOption, setSelectedOption] = useState<string>(""); 
   const [formValue, setFormValue] = useState({
     Name: "",
     Phone: "",
     Addres: "",
+    Checkbox: ""
+
   });
   const [formError, setFormError] = useState({
     Name: "",
     Phone: "",
     Addres: "",
+    Checkbox: ""
   });
 
   const handlerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,6 +37,7 @@ const OrderNow = () => {
   };
 
   const sendEmail = (formValue: FormValueType) => {
+    console.log("Sending email with data:", formValue); // Имэйл илгээхэд явж буй утгууд
     emailjs
       .send(
         "service_3h92yrr",
@@ -50,39 +56,70 @@ const OrderNow = () => {
         }
       );
   };
+  
+  // useEffect ашиглан checkbox сонгогдсоны үед алдааг арилгах
+  useEffect(() => {
+    if (selectedOption) {
+      setFormError((prev) => ({
+        ...prev,
+        Checkbox: "", // Сонгогдсон бол алдааг цэвэрлэнэ
+      }));
+    }
+  }, [selectedOption]); // selectedOption өөрчлөгдсөн үед ажиллана
 
   const clickHandler = () => {
     let errorHave = false;
     const { Name, Phone, Addres } = formValue;
+    // Name шалгах
     if (!Name.trim()) {
       setFormError((prev) => ({
         ...prev,
-        Name: "enter your  name",
+        Name: "Enter your name",
       }));
       errorHave = true;
     }
-
+  
+    // Phone шалгах
     if (!Phone.trim()) {
       setFormError((prev) => ({
         ...prev,
-        Phone: "enter your phone",
+        Phone: "Enter your phone",
       }));
       errorHave = true;
     }
-
+  
+    // Addres шалгах
     if (!Addres.trim()) {
       setFormError((prev) => ({
         ...prev,
-        Addres: "enter your addres",
+        Addres: "Enter your address",
       }));
       errorHave = true;
     }
-
-    if (!errorHave) {
-      sendEmail(formValue);
+  
+    // Checkbox сонголт шалгах
+    if (!selectedOption) {
+      setFormError((prev) => ({
+        ...prev,
+        Checkbox: "Please select an option",
+      }));
+      errorHave = true;
     }
+  
+    // Алдаа байхгүй бол formValue-ийг илгээх
+    if (!errorHave) {
+      const updatedFormValue = {
+        ...formValue,
+        Checkbox: selectedOption, // Checkbox-ын утгыг formValue-д нэмэх
+      };
+      sendEmail(updatedFormValue);  // Имэйлд илгээх
+    }
+    console.log("selected",selectedOption)
   };
-
+  
+  
+  
+  
   return (
     <div
       id="hello"
@@ -124,7 +161,9 @@ const OrderNow = () => {
         </div>
       </div>
       <div>
-        <CheckboxGroup />
+      <CheckboxGroup setSelectedOption={setSelectedOption} error={formError.Checkbox} name={"Checkbox"} value={selectedOption} />
+
+
       </div>
 
       <motion.button
