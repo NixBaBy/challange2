@@ -13,7 +13,7 @@ const BigSale = () => {
             className="w-[200px] h-[200px] absolute top-[-75px] left-[-45px]"
           />
           <div className="ml-[140px] mt-[9px] text-[14px] flex flex-col gap-2">
-            <p className="font-bold">Урамшуулал дараах дараа дуусна:</p>
+            <p className="font-bold text-center">Урамшуулал дараах өдөрийн дараа дуусна:</p>
             <CountdownTimer />
           </div>
         </div>
@@ -21,16 +21,16 @@ const BigSale = () => {
           <div
             style={{
               backgroundImage:
-                "url('https://w.ladicdn.com/s450x550/6513a52323c204001244ad79/1-20241121010958--m6g3.jpg')",
+                "url('https://cbu01.alicdn.com/img/ibank/O1CN01sgLEuG1Y3smJ41GKk_!!2215812213004-0-cib.jpg')",
             }}
-            className="w-[133px] h-[133px] rounded-[15px] border-[1px] border-solid border-white bg-cover bg-center"
+            className="w-[133px] h-[133px] rounded-[15px] border-[1px] border-solid border-white bg-cover bg-center "
           ></div>
           <div className="flex flex-col gap-5 py-[10px]">
             <div>
               <p className="line-through text-[14.06px]">
                 Эхлэх үнэ: 99,000 MNT
               </p>
-              <p className="text-[19px] font-bold">Давуу үнэ: 39,000 MNT</p>
+              <p className="text-[19px] font-bold">Давуу үнэ: 20,000 MNT</p>
             </div>
             <motion.div
               animate={{ opacity: [0, 0.7, 1] }}

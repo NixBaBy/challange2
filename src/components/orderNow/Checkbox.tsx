@@ -5,8 +5,6 @@ const CheckboxGroup = () => {
   const [selectedOptions, setSelectedOptions] = useState({
     option1: false,
     option2: false,
-    option3: false,
-    option4: false,
   });
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +16,7 @@ const CheckboxGroup = () => {
   };
 
   return (
-    <div className="p-2 space-y-2 bg-white w-[377px] h-[177px] rounded-lg mt-5">
+    <div className="p-2 space-y-2 bg-white w-[377px] h-[177px] rounded-lg mt-5 flex flex-col gap-4 pt-5">
       <div className="flex items-center">
         <input
           type="checkbox"
@@ -28,8 +26,8 @@ const CheckboxGroup = () => {
           onChange={handleCheckboxChange}
           className="mr-2 h-4 w-4"
         />
-        <label htmlFor="option1" className="text-[12px]">
-          1 бүтээгдэхүүний үнэ: 39,000₮ + 6,000₮ (хүргэлтийн төлбөртэй)
+        <label htmlFor="option1" className="text-[14px] font-bold">
+          Нүдний шилний салфетик 2ш цэнхэр 18'000
         </label>
         <div
           style={{
@@ -48,22 +46,8 @@ const CheckboxGroup = () => {
           onChange={handleCheckboxChange}
           className="mr-2 h-4 w-4"
         />
-        <label htmlFor="option2" className="text-[12px]">
-          2 бүтээгдэхүүний үнэ: 69,000₮ + үнэгүй хүргэлт
-        </label>
-      </div>
-      <div className="flex items-center">
-        <input
-          type="checkbox"
-          id="option3"
-          name="option3"
-          checked={selectedOptions.option3}
-          onChange={handleCheckboxChange}
-          className="mr-2 h-4 w-4"
-        />
-        <label htmlFor="option3" className="text-[12px]">
-          3 бүтээгдэхүүн худалдаж авбал 1 бүтээгдэхүүн үнэгүй: 99,000₮ + үнэгүй
-          хүргэлт
+        <label htmlFor="option2" className="text-[14px] font-bold">
+          Нүдний шилний салфетик 4ш цэнхэр 20'000
         </label>
         <div
           style={{
@@ -72,20 +56,6 @@ const CheckboxGroup = () => {
           }}
           className="w-[43px] h-[43px] bg-cover bg-center"
         ></div>
-      </div>
-      <div className="flex items-center">
-        <input
-          type="checkbox"
-          id="option4"
-          name="option4"
-          checked={selectedOptions.option4}
-          onChange={handleCheckboxChange}
-          className="mr-2 h-4 w-4"
-        />
-        <label htmlFor="option4" className="text-[12px]">
-          4 бүтээгдэхүүн худалдаж авбал 2 бүтээгдэхүүн үнэгүй: 119,000₮ + үнэгүй
-          хүргэлт
-        </label>
       </div>
     </div>
   );

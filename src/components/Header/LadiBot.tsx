@@ -11,13 +11,13 @@ const LadiBot = () => {
         backgroundImage:
           "url('https://w.ladicdn.com/s768x477/6513a52323c204001244ad79/3e271b097c955d6dcdef83b92a1e124f-20241008045232-2c0-i.jpg')",
       }}
-      className="bg-cover h-[477px] w-full flex flex-col items-center scroll-smooth"
+      className="bg-cover  h-[477px] w-full flex flex-col items-center scroll-smooth"
     >
       <div className="text-center text-white font-bold text-[14px] ">
-        <h3 className="pt-3"> Эрэгтэйчүүдэд зориулсан өнгөлөгч</h3>
+        <h3 className="pt-3">Нүдний шил нэг удаагийн арчих цаасан линз</h3>
         <p>
-          Арьсны хорт бодисыг гадагшлуулж, арьсыг чангалж, аюулгүй, хоргүй
-          байгалийн гаралтай найрлагатай
+          зөөврийн шил даавуу гар утасны дэлгэцийн <br /> камер тусгай толин
+          тусгал алчуур
         </p>
       </div>
       <div className="text-white flex gap-2 justify-center mt-4">

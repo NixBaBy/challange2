@@ -28,7 +28,7 @@ const UserCommends = () => {
         </div>
       </div>
       <Commends
-        name={"Abaka"}
+        name={"Babula"}
         day={"Өнөөдөр"}
         img1={
           "https://w.ladicdn.com/s400x400/6513a52323c204001244ad79/3-20241012043956-8soqd.png"
@@ -37,14 +37,14 @@ const UserCommends = () => {
           "Сайн бүтээгдэхүүн, яг зураг болон тайлбарласан шиг. Хурдан хүргэлт, болгоомжтой савлагаа. Дэлгүүрийн тойм маш их алдартай. Цаашид ч дэмжинэ."
         }
         img2={
-          "https://w.ladicdn.com/s500x550/6513a52323c204001244ad79/5_11zon-20241121013325-cw_bp.png"
+          "https://bcbsfepvision.com/wp-content/uploads/2021/03/cleaning-glasses.jpg"
         }
         img3={
-          "https://w.ladicdn.com/s500x550/6513a52323c204001244ad79/7_11zon-20241121013325-ze5q-.png"
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVJmzbDLYm6AoM3Og99XctBrpRaIJBuuH2RA&s"
         }
       />
       <Commends
-        name={"Baasan"}
+        name={"Joy"}
         day={"Өнөөдөр"}
         img1={
           "https://w.ladicdn.com/s400x400/6513a52323c204001244ad79/2-20241012043956-8vxtu.png"
@@ -53,26 +53,26 @@ const UserCommends = () => {
           "Тус компанийн бүтээгдэхүүн маш сайн. Бүтээгдэхүүний чанар сайн. Худалдан авах нь зүйтэй. Хурдан хүргэлт.. 5* дэлгүүрт түргэн шуурхай хүргэлт: Ням гарагийн өглөө (амралтын өдөр), Даваа гарагийн үдээс хойш."
         }
         img2={
-          "https://w.ladicdn.com/s500x550/6513a52323c204001244ad79/1_11zon-20241121013325-09j46.png"
+          "https://i.guim.co.uk/img/media/24d04befa13208669862f59b45af28d9083b696f/0_131_5472_3283/master/5472.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=344e05253783f1e7fb7538a99f5bc074"
         }
         img3={
-          "https://w.ladicdn.com/s500x550/6513a52323c204001244ad79/2_11zon-20241121013325-h_d4s.png"
+          "https://cdn.thelabrepair.com/wp-content/uploads/the-lab-phone-cleaning-1200x800.jpg"
         }
       />
       <Commends
-        name={"Altan"}
+        name={"Marga"}
         day={"Өнөөдөр"}
         img1={
           "https://w.ladicdn.com/s400x400/6513a52323c204001244ad79/4-20241012043956-szqgr.png"
         }
         p={
-          "Эхний удаагийн буухиа хүргэлт супер буухиа хүргэлтээс хамаагүй дээр. Арьсыг толигор болгож, нөсөө толбыг дарангуйлж, тосны шүүрлийг зохицуулна"
+          "Эхний удаагийн  хүргэлт супер буухиа хүргэлтээс хамаагүй дээр. Загалтуулахгүй маш цэвэрхэн болж байна"
         }
         img2={
-          "https://w.ladicdn.com/s500x550/6513a52323c204001244ad79/3_11zon-20241121013325-pu5k8.png"
+          "https://kungs.fi/wp-content/uploads/2021/04/IMG_5452-kypara-vinkki-01-v3-e1529574661737-1024x522-1.jpg"
         }
         img3={
-          "https://w.ladicdn.com/s500x550/6513a52323c204001244ad79/4_11zon-20241121013325--6fgw.png"
+          "https://mcn-images.bauersecure.com/wp-images/25823/420x280/motorcycle-helmet-advice-cl.jpg"
         }
       />
       <div className="flex gap-7 items-center mt-5 ml-[-80px]">
