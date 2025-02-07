@@ -45,10 +45,10 @@ const OrderNow = () => {
         { publicKey: "M4Lbb7HyMtlTMYrKi" }
       )
       .then(
-        (response) => {
+        () => {
           alert("Амжилттай илгээгдлээ!");
         },
-        (err) => {
+        () => {
           alert("Алдаа гарлаа. Дахин оролдоно уу.");
         }
       );
