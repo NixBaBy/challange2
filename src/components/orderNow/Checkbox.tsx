@@ -13,7 +13,7 @@ const CheckboxGroup = ({ setSelectedOption, error, name, value }: CheckboxGroupP
   };
 
   return (
-    <div className="p-2 space-y-2 bg-white w-[377px] h-[177px] rounded-lg mt-5 flex flex-col justify-center gap-5">
+    <div className="p-2 space-y-2 bg-white w-[377px]  h-[177px] rounded-lg mt-5 flex flex-col justify-center gap-2">
       <div className="flex items-center">
         <input
           type="radio"
@@ -22,7 +22,7 @@ const CheckboxGroup = ({ setSelectedOption, error, name, value }: CheckboxGroupP
           value="option1"
           checked={value === "option1"}
           onChange={handleRadioChange}
-          className="mr-2 h-4 w-4"
+          className="mr-2 h-7 w-7"
         />
         <label htmlFor="option1" className="text-[15px] font-bold">
         Нүдний шилний салфетик 2ш цэнхэр 18&apos;000
@@ -36,7 +36,7 @@ const CheckboxGroup = ({ setSelectedOption, error, name, value }: CheckboxGroupP
           value="option2"
           checked={value === "option2"}
           onChange={handleRadioChange}
-          className="mr-2 h-4 w-4"
+          className="mr-2 h-7 w-7"
         />
         <label htmlFor="option2" className="text-[15px] font-bold">
         Нүдний шилний салфетик 3ш цэнхэр 19&apos;000
@@ -50,7 +50,7 @@ const CheckboxGroup = ({ setSelectedOption, error, name, value }: CheckboxGroupP
           value="option3"
           checked={value === "option3"}
           onChange={handleRadioChange}
-          className="mr-2 h-4 w-4"
+          className="mr-2 h-7 w-7"
         />
         <label htmlFor="option3" className="text-[15px] font-bold">
         Нүдний шилний салфетик 4ш цэнхэр 20&apos;000
