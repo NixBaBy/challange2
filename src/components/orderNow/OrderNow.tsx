@@ -41,7 +41,7 @@ const OrderNow = () => {
       .send(
         "service_3h92yrr",
         "template_a5l5sdf",
-        { ...formValue, email: "tuuguu123123@gmail.com" },
+        { ...formValue, email: "zulsar2024@gmail.com" },
         { publicKey: "M4Lbb7HyMtlTMYrKi" }
       )
       .then(
